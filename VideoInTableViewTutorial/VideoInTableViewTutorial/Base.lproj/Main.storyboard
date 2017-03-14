@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="0EZ-u9-4jk">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Video Table View Controller-->
+        <scene sceneID="tzS-fG-g5m">
+            <objects>
+                <tableViewController id="0EZ-u9-4jk" customClass="VideoTableViewController" customModule="VideoInTableViewTutorial" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="446" sectionHeaderHeight="28" sectionFooterHeight="28" id="R8w-6V-B1h">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="VideoTableViewCell" rowHeight="446" id="HR5-Rz-azd" customClass="VideoTableViewCell" customModule="VideoInTableViewTutorial" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="446"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HR5-Rz-azd" id="hx7-bx-qZj">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="445"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Video Title Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YAW-uH-MNx">
+                                            <rect key="frame" x="8" y="8" width="359" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FRE-IF-qLn" customClass="PlayerView" customModule="VideoInTableViewTutorial" customModuleProvider="target">
+                                            <rect key="frame" x="8" y="37" width="359" height="359"/>
+                                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="FRE-IF-qLn" firstAttribute="top" secondItem="YAW-uH-MNx" secondAttribute="bottom" constant="8" symbolic="YES" id="8ts-7Z-enD"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="FRE-IF-qLn" secondAttribute="bottom" constant="41" id="OfL-Vk-dET"/>
+                                        <constraint firstItem="YAW-uH-MNx" firstAttribute="trailing" secondItem="hx7-bx-qZj" secondAttribute="trailingMargin" id="b9E-iK-ksc"/>
+                                        <constraint firstItem="YAW-uH-MNx" firstAttribute="top" secondItem="hx7-bx-qZj" secondAttribute="topMargin" id="fCd-Tn-eg2"/>
+                                        <constraint firstItem="YAW-uH-MNx" firstAttribute="trailing" secondItem="FRE-IF-qLn" secondAttribute="trailing" id="pfy-Du-UHs"/>
+                                        <constraint firstItem="YAW-uH-MNx" firstAttribute="leading" secondItem="hx7-bx-qZj" secondAttribute="leadingMargin" id="qIT-0S-8Cr"/>
+                                        <constraint firstItem="YAW-uH-MNx" firstAttribute="leading" secondItem="FRE-IF-qLn" secondAttribute="leading" id="sqc-p6-ocf"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="playerView" destination="FRE-IF-qLn" id="uQr-Kl-HKQ"/>
+                                    <outlet property="videoTitleLabel" destination="YAW-uH-MNx" id="foF-GG-UaZ"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="0EZ-u9-4jk" id="wiZ-Fq-NdK"/>
+                            <outlet property="delegate" destination="0EZ-u9-4jk" id="gLf-39-KxJ"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VAH-BW-mhY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1175" y="99"/>
+        </scene>
+    </scenes>
+</document>
